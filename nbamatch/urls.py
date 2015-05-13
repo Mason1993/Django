@@ -5,10 +5,10 @@ from nbamatch import views
 
 urlpatterns = patterns('',
    
-    url(r'^input/', views.input),
+    url(r'^$', views.input),
     url(r'^result/', views.result),
 
-    url(r'^$', ListView.as_view(
+    url(r'^home', ListView.as_view(
 	                    queryset = Post.objects.all().order_by("-date")[:10],
 	                            template_name = "index.html")),
 
@@ -20,7 +20,7 @@ urlpatterns = patterns('',
 	                  	   model = Post,
 	                       template_name = "posttitleslist.html")),
 	                  
-	                    url(r'^latestnews/$', ListView.as_view(
+	                    url(r'^contact/$', ListView.as_view(
 	                  	   queryset = Post.objects.all().order_by("-date")[:3],
-	                       template_name = "latestnews.html")),
+	                       template_name = "contact.html")),
 )
