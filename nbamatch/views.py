@@ -18,6 +18,9 @@ def result(request):
 	import os 
 	print os.getcwd() 
 
+
+	#res_index = proj3(str(request.POST['position']), params)
+	#res = nbamatch_center.find_by(index: res_index).player
 	res = proj3(str(request.POST['position']), params)
 
 
