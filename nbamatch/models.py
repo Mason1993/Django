@@ -31,7 +31,7 @@ class Center(models.Model):
 	
 class SmallForward(models.Model):
 	player = models.CharField(max_length=200)
-	position = models.IntegerField(default=0)
+	pos = models.CharField(max_length=2)
 	age= models.IntegerField(default=0)
 	threepercent=models.DecimalField(default=0, max_digits=4, decimal_places=3)
 	twopercent=models.DecimalField(default=0, max_digits=4, decimal_places=3)
@@ -53,7 +53,7 @@ class SmallForward(models.Model):
    
 class PowerForward(models.Model):
 	player = models.CharField(max_length=200)
-	pos= models.IntegerField(default=0)
+	pos = models.CharField(max_length=2)
 	age= models.IntegerField(default=0)
 	twopercent=models.DecimalField(default=0, max_digits=4, decimal_places=3)
 	freethrows=models.DecimalField(default=0, max_digits=4, decimal_places=3)
@@ -73,7 +73,7 @@ class PowerForward(models.Model):
 	
 class PointGuard(models.Model):
 	player = models.CharField(max_length=200)
-	position= models.IntegerField(default=0)
+	pos = models.CharField(max_length=2)
 	age= models.IntegerField(default=0)
 	threepercent=models.DecimalField(default=0, max_digits=4, decimal_places=3)
 	twopercent=models.DecimalField(default=0, max_digits=4, decimal_places=3)
@@ -93,7 +93,7 @@ class PointGuard(models.Model):
 
 class ShootingGuard(models.Model):
 	player = models.CharField(max_length=200)
-	position= models.IntegerField(default=0)
+	pos = models.CharField(max_length=2)
 	age= models.IntegerField(default=0)
 	threepercent=models.DecimalField(default=0, max_digits=4, decimal_places=3)
 	twopercent=models.DecimalField(default=0, max_digits=4, decimal_places=3)
