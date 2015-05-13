@@ -152,7 +152,9 @@ def proj3(pos, x): # pos: position, x: new data point
       visTest = np.reshape(pred_labels, (noTePts,noTePts-1)) # make the testing results visualized
       ids = (-np.sum(visTest, axis=1)).argsort()[:noTePts] # descending order
       ReIndex = TeIndex[TeRank[:noTePts]][ids] # ranking svm results of testing data (indices)
-      return ReIndex
+      MatchPlayerList = np.int_(ReIndex)
+      MatchPlayer = list(MatchPlayerList)[0]
+      return MatchPlayer
       '''calculate NDCG'''
       ReGrade = np.zeros((noTePts))
       for i in range(noTePts):
