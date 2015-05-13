@@ -27,7 +27,7 @@ class Center(models.Model):
 	stealsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	blocksn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	def __str__(self):
-		return self.player_text
+		return self.player
 	
 class SmallForward(models.Model):
 	player = models.CharField(max_length=200)
@@ -47,7 +47,7 @@ class SmallForward(models.Model):
 	trbsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)	
 	stealsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	def __str__(self):
-		return self.player_text
+		return self.player
 	
 	
    
@@ -69,7 +69,7 @@ class PowerForward(models.Model):
 	stealsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	blocksn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	def __str__(self):
-		return self.player_text
+		return self.player
 	
 class PointGuard(models.Model):
 	player = models.CharField(max_length=200)
@@ -89,7 +89,7 @@ class PointGuard(models.Model):
 	stealsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	trbsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)	
 	def __str__(self):
-		return self.player_text
+		return self.player
 
 class ShootingGuard(models.Model):
 	player = models.CharField(max_length=200)
@@ -109,5 +109,4 @@ class ShootingGuard(models.Model):
 	assistsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	stealsn=models.DecimalField(default=0, max_digits=10, decimal_places=9)
 	def __str__(self):
-		return self.player_text
-
+		return self.player

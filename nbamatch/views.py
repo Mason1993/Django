@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from match import proj3
+from .models import Center
 
 # Create your views here.
 def index(request):
-	return render(request, 'nbamatch/index.html')
+	return render(request, 'index.html')
+
+def input(request):
+	return render(request, 'input.html')
 
 def result(request):
 	params = []
@@ -16,14 +20,15 @@ def result(request):
 
 	
 	import os 
-	print os.getcwd() 
+	print os.getcwd() #returns current working directory of a process
 
 
 	#res_index = proj3(str(request.POST['position']), params)
 	#res = nbamatch_center.find_by(index: res_index).player
 	res = proj3(str(request.POST['position']), params)
+	#res = Center.objects.get(index=1)
 
 
 	context = {'result': res}
 	# import pdb; pdb.set_trace()
-	return render(request, 'nbamatch/result.html', context)
+	return render(request, 'result.html', context)

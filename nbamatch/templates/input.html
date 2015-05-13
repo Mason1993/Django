@@ -1,4 +1,7 @@
-foo
+{% extends "base.html" %}
+{% block content %}
+
+
 
 <form method="POST" action="result/">
 	{% csrf_token %}
@@ -24,3 +27,5 @@ foo
 	<br>
 	<input type="submit" value="Submit">
 </form>
+
+{% endblock %}
