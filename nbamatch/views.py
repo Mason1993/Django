@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from match import proj3
-from .models import Center
+from .models import Center, SmallForward, PowerForward, PointGuard, ShootingGuard
 
 # Create your views here.
 def index(request):
@@ -28,8 +28,25 @@ def result(request):
 	pos = str(request.POST['position'])
 	res_index = proj3(str(request.POST['position']), params)
 	#res = Center.objects.get(index=1)
-	res = nbamatch_center.objects.get(index=res_index).name
+	if pos == 'C':
+	      res = Center.objects.get(id=res_index).player
 
+	elif pos == 'SF':
+		  res = SmallForward.objects.get(id=res_index).player
+
+	elif pos == 'PF':
+		  res = PowerForward.objects.get(id=res_index).player
+
+	elif pos == 'PG':
+		  res = PointGuard.objects.get(id=res_index).player
+
+	elif pos == 'SG':
+		  res = ShootingGuard.objects.get(id=res_index).player
+
+	else:
+		  res = 'error'
+
+    
 
 	context = {'result': res,
 	           'position': pos}
