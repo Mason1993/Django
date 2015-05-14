@@ -26,9 +26,9 @@ def result(request):
 	#res_index = proj3(str(request.POST['position']), params)
 	#res = nbamatch_center.find_by(index: res_index).player
 	pos = str(request.POST['position'])
-	res = proj3(str(request.POST['position']), params)
+	res_index = proj3(str(request.POST['position']), params)
 	#res = Center.objects.get(index=1)
-	#res = nbamatch_center.objects.get(index=1) 
+	res = nbamatch_center.objects.get(index=res_index).name
 
 
 	context = {'result': res,
