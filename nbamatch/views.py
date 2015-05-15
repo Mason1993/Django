@@ -30,18 +30,30 @@ def result(request):
 	#res = Center.objects.get(index=1)
 	if pos == 'C':
 	      res = Center.objects.get(id=res_index).player
+	      query_para1 = Center.objects.get(id=res_index).twopercent
+	      query_para2 = Center.objects.get(id=res_index).freethrows
+	      query_para3 = Center.objects.get(id=res_index).trbs
+	      query_para4 = Center.objects.get(id=res_index).assists
+	      query_para5 = Center.objects.get(id=res_index).steals
+	      query_para6 = Center.objects.get(id=res_index).blocks
+	      
 
 	elif pos == 'SF':
 		  res = SmallForward.objects.get(id=res_index).player
+		  query_results = SmallForward.objects.get(id=res_index)
 
 	elif pos == 'PF':
 		  res = PowerForward.objects.get(id=res_index).player
+		  query_results = PowerForward.objects.get(id=res_index)
+
 
 	elif pos == 'PG':
 		  res = PointGuard.objects.get(id=res_index).player
+		  query_results = PointGuard.objects.get(id=res_index)
 
 	elif pos == 'SG':
 		  res = ShootingGuard.objects.get(id=res_index).player
+		  query_results = ShootingGuard.objects.get(id=res_index)
 
 	else:
 		  res = 'error'
@@ -49,6 +61,14 @@ def result(request):
     
 
 	context = {'result': res,
-	           'position': pos}
+	           'position': pos,
+	           'para1': query_para1,
+	           'para2': query_para2,
+	           'para3': query_para3,
+	           'para4': query_para4,
+	           'para5': query_para5,
+	           'para6': query_para6}
 	# import pdb; pdb.set_trace()
 	return render(request, 'result.html', context)
+
+
