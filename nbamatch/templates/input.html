@@ -1,43 +1,73 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<h1>Please Input Your Self-Evaluation Skill Data Below</h1>
+<title>Position Input Panel</title>
+<h1>Choose Your Position</h1>
 
 <strong><p>Note: Skills should be within [0,10], (10 => Strongest; 0 => Weakeast).
 </p></strong>
 
 
-<form method="POST" action="result/">
-	{% csrf_token %}
-	<strong>Position</strong><br>
-	<select name="position">
-    	<option value="PG">Point Guard</option>
-    	<option value="SG">Scoring Guard</option>
-    	<option value="SF">Small Forward</option>
-    	<option value="PF">Power Forward</option>
-    	<option value="C">Center</option>
-	</select>
-	<br>
-	<strong>Two Point Percent</strong><br>
-	<input type="number" name="param1" placehold="param 1">
-	<br>
-	<strong>Free Throw</strong><br>
-	<input type="number" name="param2" placehold="param 2">
-	<br>
-	<strong>TRBS</strong><br>
-	<input type="number" name="param3" placehold="param 3">
-	<br>
-	<strong>Assists</strong><br>
-	<input type="number" name="param4" placehold="param 4">
-	<br>
-	<strong>Steals</strong><br>
-	<input type="number" name="param5" placehold="param 5">
-	<br>
-	<strong>Blocks</strong><br>
-	<input type="number" name="param6" placehold="param 6">
-	<br>
-	<input type="submit" value="Submit">
-</form>
+<div class="container">
+	<div class="position_image">
+         <h2>Center</h2>
+         <a href="http://localhost:8000/nbamatch/input/c/">
+         <img src="http://upload.wikimedia.org/wikipedia/commons/8/81/Dwight_Howard_March_2014.jpg" alt="Center" style="width:200px;height:300px">
+         </a>
+    </div>
+
+    <div class="position_image">
+    <h2>Point Guard</h2>
+    <a href="http://localhost:8000/nbamatch/input/pg/">
+    <img src="http://upload.wikimedia.org/wikipedia/commons/6/61/Chris_Paul_dribbling_20131118_Clippers_v_Grizzles.jpg" alt="Point Guard" style="width:200px;height:300px">
+    </a>
+    </div>
+
+    <div class="position_image">
+         <h2>Power Forward</h2>
+         <a href="http://localhost:8000/nbamatch/input/pf/">
+         <img src="http://upload.wikimedia.org/wikipedia/commons/7/7e/Blake_Griffin_with_ball_20131118_Clippers_v_Grizzles.jpg" alt="Power Forward" style="width:200px;height:300px">
+         </a>
+    </div>
+
+    <div class="position_image">
+    <h2>Shooting Guard</h2>
+    <a href="http://localhost:8000/nbamatch/input/pg/">
+    <img src="http://upload.wikimedia.org/wikipedia/commons/a/ab/James_Harden_Rockets_cropped.jpg" alt="Shooting Guard" style="width:200px;height:300px">
+    </a>
+    </div>
+
+    <div class="position_image">
+         <h2>Small Forward</h2>
+         <a href="http://localhost:8000/nbamatch/input/c/">
+         <img src="http://upload.wikimedia.org/wikipedia/commons/b/b2/LeBron_James_%2815662939969%29.jpg" alt="Small Forward" style="width:200px;height:300px">
+         </a>
+    </div>
+</div>
+
+
+<!--
+</body>
+
+<h2>Power Forward</h2>
+<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
+
+</body>
+
+<h2>Point Gurad</h2>
+<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
+
+</body>
+
+<h2>Small Forward</h2>
+<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
+
+</body>
+
+<h2>Shooting Guard</h2>
+<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px">
+
+</body>
+-->
 
 {% endblock %}

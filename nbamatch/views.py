@@ -9,7 +9,24 @@ def index(request):
 def input(request):
 	return render(request, 'input.html')
 
-def result(request):
+def inputc(request):
+	return render(request, 'inputc.html')
+
+'''
+def inputpf(request):
+	return render(request, 'inputpf.html')
+
+def inputpg(request):
+	return render(request, 'inputpg.html')
+
+def inputsf(request):
+	return render(request, 'inputsf.html')
+
+def inputsg(request):
+	return render(request, 'inputsg.html')
+'''
+
+def resultc(request):
 	params = []
 	params.append(float(request.POST['param1'])/10)
 	params.append(float(request.POST['param2'])/10)
@@ -25,8 +42,11 @@ def result(request):
 
 	#res_index = proj3(str(request.POST['position']), params)
 	#res = nbamatch_center.find_by(index: res_index).player
+	'''
 	pos = str(request.POST['position'])
 	res_index = proj3(str(request.POST['position']), params)
+	'''
+	res_index = proj3('C', params)
 	user_para1 = 10 * params[0]
 	user_para2 = 10 * params[1]
 	user_para3 = 10 * params[2]
@@ -34,44 +54,20 @@ def result(request):
 	user_para5 = 10 * params[4]
 	user_para6 = 10 * params[5]
 	#res = Center.objects.get(index=1)
-	if pos == 'C':
-	      res = Center.objects.get(id=res_index).player
-	      query_para1 = round(Center.objects.get(id=res_index).twopercent,2)
-	      query_para2 = round(Center.objects.get(id=res_index).freethrows,2)
-	      query_para3 = round(Center.objects.get(id=res_index).trbs,2)
-	      query_para4 = round(Center.objects.get(id=res_index).assists,2)
-	      query_para5 = round(Center.objects.get(id=res_index).steals,2)
-	      query_para6 = round(Center.objects.get(id=res_index).blocks,2)
-	      query_para1_n = round(10 * Center.objects.get(id=res_index).twopercentn,0)
-	      query_para2_n = round(10 * Center.objects.get(id=res_index).freethrowsn,0)
-	      query_para3_n = round(10 * Center.objects.get(id=res_index).trbsn,0)
-	      query_para4_n = round(10 * Center.objects.get(id=res_index).assistsn,0)
-	      query_para5_n = round(10 * Center.objects.get(id=res_index).stealsn,0)
-	      query_para6_n = round(10 * Center.objects.get(id=res_index).blocksn,0)
-	      
-
-	elif pos == 'SF':
-		  res = SmallForward.objects.get(id=res_index).player
-		  query_results = SmallForward.objects.get(id=res_index)
-
-	elif pos == 'PF':
-		  res = PowerForward.objects.get(id=res_index).player
-		  query_results = PowerForward.objects.get(id=res_index)
-
-
-	elif pos == 'PG':
-		  res = PointGuard.objects.get(id=res_index).player
-		  query_results = PointGuard.objects.get(id=res_index)
-
-	elif pos == 'SG':
-		  res = ShootingGuard.objects.get(id=res_index).player
-		  query_results = ShootingGuard.objects.get(id=res_index)
-
-	else:
-		  res = 'error'
-
-    
-
+	
+	res = Center.objects.get(id=res_index).player
+	query_para1 = round(Center.objects.get(id=res_index).twopercent,2)
+	query_para2 = round(Center.objects.get(id=res_index).freethrows,2)
+	query_para3 = round(Center.objects.get(id=res_index).trbs,2)
+	query_para4 = round(Center.objects.get(id=res_index).assists,2)
+	query_para5 = round(Center.objects.get(id=res_index).steals,2)
+	query_para6 = round(Center.objects.get(id=res_index).blocks,2)
+	query_para1_n = round(10 * Center.objects.get(id=res_index).twopercentn,0)
+	query_para2_n = round(10 * Center.objects.get(id=res_index).freethrowsn,0)
+	query_para3_n = round(10 * Center.objects.get(id=res_index).trbsn,0)
+	query_para4_n = round(10 * Center.objects.get(id=res_index).assistsn,0)
+	query_para5_n = round(10 * Center.objects.get(id=res_index).stealsn,0)
+	query_para6_n = round(10 * Center.objects.get(id=res_index).blocksn,0)
 	context = {'user_para1': user_para1,
 	           'user_para2': user_para2,
 	           'user_para3': user_para3,
@@ -79,7 +75,7 @@ def result(request):
 	           'user_para5': user_para5,
 	           'user_para6': user_para6,
 	           'result': res,
-	           'position': pos,
+	           #'position': pos,
 	           'para1': query_para1,
 	           'para2': query_para2,
 	           'para3': query_para3,
@@ -93,6 +89,75 @@ def result(request):
 	           'para5n': query_para5_n,
 	           'para6n': query_para6_n}
 	# import pdb; pdb.set_trace()
-	return render(request, 'result.html', context)
+	return render(request, 'resultc.html', context)
+	      
+'''
+	elif pos == 'SF':
+		  res = SmallForward.objects.get(id=res_index).player
+		  query_para1 = round(Center.objects.get(id=res_index).twopercent,2)
+	      query_para2 = round(Center.objects.get(id=res_index).freethrows,2)
+	      query_para3 = round(Center.objects.get(id=res_index).trbs,2)
+	      query_para4 = round(Center.objects.get(id=res_index).assists,2)
+	      query_para5 = round(Center.objects.get(id=res_index).steals,2)
+	      query_para6 = round(Center.objects.get(id=res_index).blocks,2)
+	      query_para1_n = round(10 * Center.objects.get(id=res_index).twopercentn,0)
+	      query_para2_n = round(10 * Center.objects.get(id=res_index).freethrowsn,0)
+	      query_para3_n = round(10 * Center.objects.get(id=res_index).trbsn,0)
+	      query_para4_n = round(10 * Center.objects.get(id=res_index).assistsn,0)
+	      query_para5_n = round(10 * Center.objects.get(id=res_index).stealsn,0)
+	      query_para6_n = round(10 * Center.objects.get(id=res_index).blocksn,0)
+
+	elif pos == 'PF':
+		  res = PowerForward.objects.get(id=res_index).player
+		  query_para1 = round(Center.objects.get(id=res_index).twopercent,2)
+	      query_para2 = round(Center.objects.get(id=res_index).freethrows,2)
+	      query_para3 = round(Center.objects.get(id=res_index).trbs,2)
+	      query_para4 = round(Center.objects.get(id=res_index).assists,2)
+	      query_para5 = round(Center.objects.get(id=res_index).steals,2)
+	      query_para6 = round(Center.objects.get(id=res_index).blocks,2)
+	      query_para1_n = round(10 * Center.objects.get(id=res_index).twopercentn,0)
+	      query_para2_n = round(10 * Center.objects.get(id=res_index).freethrowsn,0)
+	      query_para3_n = round(10 * Center.objects.get(id=res_index).trbsn,0)
+	      query_para4_n = round(10 * Center.objects.get(id=res_index).assistsn,0)
+	      query_para5_n = round(10 * Center.objects.get(id=res_index).stealsn,0)
+	      query_para6_n = round(10 * Center.objects.get(id=res_index).blocksn,0)
+
+
+	elif pos == 'PG':
+		  res = PointGuard.objects.get(id=res_index).player
+		  query_para1 = round(Center.objects.get(id=res_index).twopercent,2)
+	      query_para2 = round(Center.objects.get(id=res_index).freethrows,2)
+	      query_para3 = round(Center.objects.get(id=res_index).trbs,2)
+	      query_para4 = round(Center.objects.get(id=res_index).assists,2)
+	      query_para5 = round(Center.objects.get(id=res_index).steals,2)
+	      query_para6 = round(Center.objects.get(id=res_index).blocks,2)
+	      query_para1_n = round(10 * Center.objects.get(id=res_index).twopercentn,0)
+	      query_para2_n = round(10 * Center.objects.get(id=res_index).freethrowsn,0)
+	      query_para3_n = round(10 * Center.objects.get(id=res_index).trbsn,0)
+	      query_para4_n = round(10 * Center.objects.get(id=res_index).assistsn,0)
+	      query_para5_n = round(10 * Center.objects.get(id=res_index).stealsn,0)
+	      query_para6_n = round(10 * Center.objects.get(id=res_index).blocksn,0)
+
+	elif pos == 'SG':
+		  res = ShootingGuard.objects.get(id=res_index).player
+		  query_para1 = round(Center.objects.get(id=res_index).twopercent,2)
+	      query_para2 = round(Center.objects.get(id=res_index).freethrows,2)
+	      query_para3 = round(Center.objects.get(id=res_index).trbs,2)
+	      query_para4 = round(Center.objects.get(id=res_index).assists,2)
+	      query_para5 = round(Center.objects.get(id=res_index).steals,2)
+	      query_para6 = round(Center.objects.get(id=res_index).blocks,2)
+	      query_para1_n = round(10 * Center.objects.get(id=res_index).twopercentn,0)
+	      query_para2_n = round(10 * Center.objects.get(id=res_index).freethrowsn,0)
+	      query_para3_n = round(10 * Center.objects.get(id=res_index).trbsn,0)
+	      query_para4_n = round(10 * Center.objects.get(id=res_index).assistsn,0)
+	      query_para5_n = round(10 * Center.objects.get(id=res_index).stealsn,0)
+	      query_para6_n = round(10 * Center.objects.get(id=res_index).blocksn,0)
+
+	else:
+		  res = 'error'
+
+'''    
+
+	
 
 

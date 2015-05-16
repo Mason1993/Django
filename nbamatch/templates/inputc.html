@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<title>Input Panel</title>
+<h1>Please Input Your Self-Evaluation Skill Data Below</h1>
+
+<strong><p>Note: Skills should be within [0,10], (10 => Strongest; 0 => Weakeast).
+</p></strong>
+
+
+<form method="POST" action="result/">
+	{% csrf_token %}
+<!--
+	<strong>Position</strong><br>
+	<select name="position">
+    	<option value="PG">Point Guard</option>
+    	<option value="SG">Scoring Guard</option>
+    	<option value="SF">Small Forward</option>
+    	<option value="PF">Power Forward</option>
+    	<option value="C">Center</option>
+	</select>
+	<br>
+-->
+	<strong>Two Point Percent</strong><br>
+	<input type="number" name="param1" placehold="param 1">
+	<br>
+	<strong>Free Throws</strong><br>
+	<input type="number" name="param2" placehold="param 2">
+	<br>
+	<strong>TRBS</strong><br>
+	<input type="number" name="param3" placehold="param 3">
+	<br>
+	<strong>Assists</strong><br>
+	<input type="number" name="param4" placehold="param 4">
+	<br>
+	<strong>Steals</strong><br>
+	<input type="number" name="param5" placehold="param 5">
+	<br>
+	<strong>Blocks</strong><br>
+	<input type="number" name="param6" placehold="param 6">
+	<br>
+	<input type="submit" value="Submit">
+</form>
+
+{% endblock %}
