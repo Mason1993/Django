@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<strong>The most similar NBA player to you is {{result}}, a famous {{position}} player.</strong>
+<br>
+<table>
+    <tbody>
+    <tr><td><strong><center>Actually Static Data</center></strong></td></tr>
+    <tr>
+        <td>Three Point Prcent</td>
+        <td>{{para1}}</td>
+    </tr>
+    <tr>
+        <td>Two Point Prcent</td>
+        <td>{{para2}}</td>
+    </tr>
+    <tr>
+        <td>Free Throws</td>
+        <td>{{para3}}</td>
+    </tr>
+    <tr>
+        <td>TRB</td>
+        <td>{{para4}}</td>
+    </tr>
+    <tr>
+        <td>Assists</td>
+        <td>{{para5}}</td>
+    </tr>
+    <tr>
+        <td>Steals</td>
+        <td>{{para6}}</td>
+    </tr>
+    
+    
+    <tbody>
+
+
+    <tbody>
+    <tr><td><strong><center>Comparison(User/Matched Player)</center></strong></td></tr>
+    <tr>
+        <td><strong>Three Point Prcent</strong></td>
+        <td>{{user_para1}}/{{para1n}}</td>
+    </tr>
+    <tr>
+        <td><strong>Two Point Prcent</strong></td>
+        <td>{{user_para2}}/{{para2n}}</td>
+    </tr>
+    <tr>
+        <td><strong>Free Throws</strong></td>
+        <td>{{user_para3}}/{{para3n}}</td>
+    </tr>
+    <tr>
+        <td><strong>TRB</strong></td>
+        <td>{{user_para4}}/{{para4n}}</td>
+    </tr>
+    <tr>
+        <td><strong>Assists</strong></td>
+        <td>{{user_para5}}/{{para5n}}</td>
+    </tr>
+    <tr>
+        <td><strong>Steals</strong></td>
+        <td>{{user_para6}}/{{para6n}}</td>
+    </tr>
+    
+    <tbody>
+</table> 
+
+
+   
+  <!--  {% for item in fulldata %}
+    <tr> 
+        <td>{{ item.field1 }}</td>
+        <td>{{ item.field2 }}</td>
+        <td>{{ item.field3 }}</td>
+        <td>{{ item.field4 }}</td>
+        <td>{{ item.field5 }}</td>
+        <td>{{ item.field6 }}</td>
+        <td>{{ item.field7 }}</td>
+        <td>{{ item.field8 }}</td>
+        <td>{{ item.field9 }}</td>
+        <td>{{ item.field10 }}</td>
+        <td>{{ item.field11 }}</td>
+        <td>{{ item.field12 }}</td>
+        <td>{{ item.field13 }}</td>
+        <td>{{ item.field14 }}</td>
+        <td>{{ item.field15 }}</td>
+        <td>{{ item.field16 }}</td>
+    </tr>
+    {% endfor %}
+-->
+
+{% endblock %}

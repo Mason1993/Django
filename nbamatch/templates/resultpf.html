@@ -1,23 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<title>Matched Result</title>
 <br>
-<div align="center"> 
-<h2>The most matched NBA player to you is {{result}}, a famous player in Center position.</h2>
+<strong>The most similar NBA player to you is {{result}}, a famous {{position}} player.</strong>
 <br>
-<h2>A center who possesses size along with athleticism and skill constitutes an unparalleled asset for a team.Your primary role is to use your size to score and defend from a position close to the basket.  You may also need to take jump balls.</h2>
-<br>
-
 <table>
     <tbody>
-    <tr><td><strong>Actually Static Data</strong></td></tr>
+    <tr><td><strong><center>Actually Static Data</center></strong></td></tr>
     <tr>
         <td>Two Point Prcent</td>
-        <td>{{para1}}%</td>
+        <td>{{para1}}</td>
     </tr>
     <tr>
         <td>Free Throws</td>
-        <td>{{para2}}%</td>
+        <td>{{para2}}</td>
     </tr>
     <tr>
         <td>TRB</td>
@@ -35,45 +30,37 @@
         <td>Blocks</td>
         <td>{{para6}}</td>
     </tr>
-   
+    <tbody>
 
-    <br>
-    <br>
 
-   
-    <div align="center"> 
-    <tr><td><strong><center>Data Comparison (User / Matched Player)</center></strong></td></tr>
-    </div>
+    <tbody>
+    <tr><td><strong><center>Comparison(User/Matched Player)</center></strong></td></tr>
     <tr>
-        <td>Two Point Prcent</td>
-        <td>{{user_para1}} / {{para1n}}</td>
+        <td><strong>Two Point Prcent</strong></td>
+        <td>{{user_para1}}/{{para1n}}</td>
     </tr>
     <tr>
-        <td>Free Throws</td>
-        <td>{{user_para2}} / {{para2n}}</td>
+        <td><strong>Free Throws</strong></td>
+        <td>{{user_para2}}/{{para2n}}</td>
     </tr>
     <tr>
-        <td>TRB</td>
-        <td>{{user_para3}} / {{para3n}}</td>
+        <td><strong>TRB</strong></td>
+        <td>{{user_para3}}/{{para3n}}</td>
     </tr>
     <tr>
-        <td>Assists</td>
-        <td>{{user_para4}} / {{para4n}}</td>
+        <td><strong>Assists</strong></td>
+        <td>{{user_para4}}/{{para4n}}</td>
     </tr>
     <tr>
-        <td>Steals</td>
-        <td>{{user_para5}} / {{para5n}}</td>
+        <td><strong>Steals</strong></td>
+        <td>{{user_para5}}/{{para5n}}</td>
     </tr>
     <tr>
-        <td>Blocks</td>
-        <td>{{user_para6}} / {{para6n}}</td>
+        <td><strong>Blocks</strong></td>
+        <td>{{user_para6}}/{{para6n}}</td>
     </tr>
-    </tbody>
+    <tbody>
 </table> 
-</div>
-
-<br>
-<br>
 
 
    
