@@ -1,3 +1,4 @@
+
 body {
 	color:#000305;
 	font-size: 80%;
@@ -46,7 +47,7 @@ a:hover, a:active {
 .mainHead nav a:link, .mainHead nav a:visited {
 	color: #FFF;
 	display: inline-block;
-	padding: 10px 25px;
+	padding: 10px 40px;
 	height:20px;
 }
 
@@ -108,4 +109,17 @@ a:hover, a:active {
 	width: 92%;
 	margin: 2% auto;
 	color: #fff;
+}
+
+
+.container{
+    text-align:center;
+    
+ }
+
+.position_image{
+    display:inline-block;
+    margin:5px 20px;
+    padding:5px;
+  
 }
