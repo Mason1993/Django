@@ -172,7 +172,7 @@ def resultpf(request):
 	           'para5n': query_para5_n,
 	           'para6n': query_para6_n}
 	# import pdb; pdb.set_trace()
-	return render(request, 'resultc.html', context)
+	return render(request, 'resultpf.html', context)
 
 
 def resultpg(request):
@@ -240,7 +240,7 @@ def resultpg(request):
 	           'para5n': query_para5_n,
 	           'para6n': query_para6_n}
 	# import pdb; pdb.set_trace()
-	return render(request, 'resultc.html', context)
+	return render(request, 'resultpg.html', context)
 
 
 
@@ -307,7 +307,7 @@ def resultsf(request):
 	           'para5n': query_para5_n,
 	           'para6n': query_para6_n}
 	# import pdb; pdb.set_trace()
-	return render(request, 'resultc.html', context)
+	return render(request, 'resultsf.html', context)
 
 
 def resultsg(request):
@@ -373,7 +373,7 @@ def resultsg(request):
 	           'para5n': query_para5_n,
 	           'para6n': query_para6_n}
 	# import pdb; pdb.set_trace()
-	return render(request, 'resultc.html', context)
+	return render(request, 'resultsg.html', context)
 
 
 
