@@ -1,4 +1,4 @@
-id,player,pos,age,threepercent,twopercent,freethrows,trbs,assits,steals,threepercentn,twopercentn,freethrowsn,trbsn,assistsn,stealsn
+id,player,pos,age,threepercent,twopercent,freethrows,trbs,assists,steals,threepercentn,twopercentn,freethrowsn,trbsn,assistsn,stealsn
 0,Alec Burks,SG,22,0.35,0.48,0.748,3.3,2.7,0.9,-1.865,0.645833333,1.432176656,0.441176471,3.306788512,0.059701493
 1,Alexey Shved,SG,24,0.295,0.435,0.72,2.3,3.7,0.7,-1.8705,0.560606061,1.34384858,0.294117647,4.61227154,0.029850746
 2,Allen Crabbe,SG,22,0.373,0.486,0.889,1.1,0.8,0.3,-1.8627,0.65719697,1.876971609,0.117647059,0.826370757,-0.029850746
