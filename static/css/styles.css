@@ -1,3 +1,4 @@
+ 
 
 body {
 	color:#000305;
@@ -40,7 +41,7 @@ a:hover, a:active {
 }
 
 .mainHead nav ul li {
-	float:left;
+	float:center;
 	display: inline;
 }
 

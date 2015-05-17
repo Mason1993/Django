@@ -1,22 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 <br>
-<strong>The most similar NBA player to you is {{result}}, a famous {{position}} player.</strong>
-<br>
+<div align="center"> 
+<h3>The most matched NBA player to you is </h3> 
+<h2>{{result}}</h2>
+</div>
+<p>The shooting guard is commonly abbreviated as SG, also known as the two or off guard, is one of five traditional positions on a basketball team. A shooting guard's main objective is to score points for his team. Some teams ask their shooting guards to bring up the ball as well; these players are known colloquially as combo guards.</p>
+
+<div align="center"> 
+<h3>Matching Results</h3>
 <table>
-    <tbody>
     <tr><td><strong><center>Actually Static Data</center></strong></td></tr>
     <tr>
         <td>Three Point Prcent</td>
-        <td>{{para1}}</td>
+        <td>{{para1}}%</td>
     </tr>
     <tr>
         <td>Two Point Prcent</td>
-        <td>{{para2}}</td>
+        <td>{{para2}}%</td>
     </tr>
     <tr>
         <td>Free Throws</td>
-        <td>{{para3}}</td>
+        <td>{{para3}}%</td>
     </tr>
     <tr>
         <td>TRB</td>
@@ -30,12 +35,7 @@
         <td>Steals</td>
         <td>{{para6}}</td>
     </tr>
-    
-    
-    <tbody>
 
-
-    <tbody>
     <tr><td><strong><center>Comparison(User/Matched Player)</center></strong></td></tr>
     <tr>
         <td><strong>Three Point Prcent</strong></td>
@@ -61,32 +61,6 @@
         <td><strong>Steals</strong></td>
         <td>{{user_para6}}/{{para6n}}</td>
     </tr>
-    
-    <tbody>
 </table> 
-
-
-   
-  <!--  {% for item in fulldata %}
-    <tr> 
-        <td>{{ item.field1 }}</td>
-        <td>{{ item.field2 }}</td>
-        <td>{{ item.field3 }}</td>
-        <td>{{ item.field4 }}</td>
-        <td>{{ item.field5 }}</td>
-        <td>{{ item.field6 }}</td>
-        <td>{{ item.field7 }}</td>
-        <td>{{ item.field8 }}</td>
-        <td>{{ item.field9 }}</td>
-        <td>{{ item.field10 }}</td>
-        <td>{{ item.field11 }}</td>
-        <td>{{ item.field12 }}</td>
-        <td>{{ item.field13 }}</td>
-        <td>{{ item.field14 }}</td>
-        <td>{{ item.field15 }}</td>
-        <td>{{ item.field16 }}</td>
-    </tr>
-    {% endfor %}
--->
 
 {% endblock %}

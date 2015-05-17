@@ -6,6 +6,12 @@ from .models import Center, SmallForward, PowerForward, PointGuard, ShootingGuar
 def index(request):
 	return render(request, 'index.html')
 
+def about(request):
+	return render(request, 'about.html')
+
+def contact(request):
+	return render(request, 'contact.html')
+
 def input(request):
 	return render(request, 'input.html')
 
@@ -123,7 +129,7 @@ def resultpf(request):
 	pos = str(request.POST['position'])
 	res_index = proj3(str(request.POST['position']), params)
 	'''
-	res_index = proj3('PG', params)
+	res_index = proj3('PF', params)
 	user_para1 = 10 * params[0]
 	user_para2 = 10 * params[1]
 	user_para3 = 10 * params[2]
@@ -133,8 +139,8 @@ def resultpf(request):
 	#res = PowerForward.objects.get(index=1)
 	
 	res = PowerForward.objects.get(id=res_index).player
-	query_para1 = 100 * round(PowerForward.objects.get(id=res_index).twopercent,2)
-	query_para2 = 100 * round(PowerForward.objects.get(id=res_index).freethrows,2)
+	query_para1 = round(100 * PowerForward.objects.get(id=res_index).twopercent,2)
+	query_para2 = round(100 * PowerForward.objects.get(id=res_index).freethrows,2)
 	query_para3 = round(PowerForward.objects.get(id=res_index).trbs,2)
 	query_para4 = round(PowerForward.objects.get(id=res_index).assists,2)
 	query_para5 = round(PowerForward.objects.get(id=res_index).steals,2)
@@ -189,7 +195,7 @@ def resultpg(request):
 	pos = str(request.POST['position'])
 	res_index = proj3(str(request.POST['position']), params)
 	'''
-	res_index = proj3('PF', params)
+	res_index = proj3('PG', params)
 	user_para1 = 10 * params[0]
 	user_para2 = 10 * params[1]
 	user_para3 = 10 * params[2]
@@ -199,19 +205,19 @@ def resultpg(request):
 	#res = PointGuard.objects.get(index=1)
 	
 	res = PointGuard.objects.get(id=res_index).player
-	query_para1 = 100 * round(PointGuard.objects.get(id=res_index).threepercent,2)
-	query_para2 = 100 * round(PointGuard.objects.get(id=res_index).twopercent,2)
-	query_para3 = 100 * round(PointGuard.objects.get(id=res_index).freethrows,2)
+	query_para1 = round(100 * PointGuard.objects.get(id=res_index).threepercent,2)
+	query_para2 = round(100 * PointGuard.objects.get(id=res_index).twopercent,2)
+	query_para3 = round(100 * PointGuard.objects.get(id=res_index).freethrows,2)
 	query_para4 = round(PointGuard.objects.get(id=res_index).assists,2)
 	query_para5 = round(PointGuard.objects.get(id=res_index).steals,2)
 	query_para6 = round(PointGuard.objects.get(id=res_index).trbs,2)
 	
-	query_para1_n = 100 * round(PointGuard.objects.get(id=res_index).threepercentn,0)
-	query_para2_n = 100 * round(PointGuard.objects.get(id=res_index).twopercentn,0)
-	query_para3_n = 100 * round(PointGuard.objects.get(id=res_index).freethrowsn,0)
-	query_para4_n = round(PointGuard.objects.get(id=res_index).assistsn,0)
-	query_para5_n = round(PointGuard.objects.get(id=res_index).stealsn,0)
-	query_para6_n = round(PointGuard.objects.get(id=res_index).trbsn,0)
+	query_para1_n = round(10 * PointGuard.objects.get(id=res_index).threepercentn,0)
+	query_para2_n = round(10 * PointGuard.objects.get(id=res_index).twopercentn,0)
+	query_para3_n = round(10 * PointGuard.objects.get(id=res_index).freethrowsn,0)
+	query_para4_n = round(10 * PointGuard.objects.get(id=res_index).assistsn,0)
+	query_para5_n = round(10 * PointGuard.objects.get(id=res_index).stealsn,0)
+	query_para6_n = round(10 * PointGuard.objects.get(id=res_index).trbsn,0)
 
 	context = {'user_para1': user_para1,
 	           'user_para2': user_para2,
@@ -268,18 +274,18 @@ def resultsf(request):
 	#res = SmallForward.objects.get(index=1)
 	
 	res = SmallForward.objects.get(id=res_index).player
-	query_para1 = 100 * round(SmallForward.objects.get(id=res_index).twopercent,2)
-	query_para2 = 100 * round(SmallForward.objects.get(id=res_index).freethrows,2)
-	query_para3 = round(SmallForward.objects.get(id=res_index).trbs,2)
+	query_para1 = round(100 * SmallForward.objects.get(id=res_index).threepercent,2)
+	query_para2 = round(100 * SmallForward.objects.get(id=res_index).twopercent,2)
+	query_para3 = round(100 * SmallForward.objects.get(id=res_index).freethrows,2)
 	query_para4 = round(SmallForward.objects.get(id=res_index).assists,2)
-	query_para5 = round(SmallForward.objects.get(id=res_index).steals,2)
-	query_para6 = round(SmallForward.objects.get(id=res_index).blocks,2)
-	query_para1_n = round(10 * SmallForward.objects.get(id=res_index).twopercentn,0)
-	query_para2_n = round(10 * SmallForward.objects.get(id=res_index).freethrowsn,0)
-	query_para3_n = round(10 * SmallForward.objects.get(id=res_index).trbsn,0)
-	query_para4_n = round(10 * SmallForward.objects.get(id=res_index).assistsn,0)
-	query_para5_n = round(10 * SmallForward.objects.get(id=res_index).stealsn,0)
-	query_para6_n = round(10 * SmallForward.objects.get(id=res_index).blocksn,0)
+	query_para5 = round(SmallForward.objects.get(id=res_index).trbs,2)
+	query_para6 = round(SmallForward.objects.get(id=res_index).steals,2)
+	query_para1_n = round(10 * SmallForward.objects.get(id=res_index).threepercentn,2)
+	query_para2_n = round(10 * SmallForward.objects.get(id=res_index).twopercentn,2)
+	query_para3_n = round(10 * SmallForward.objects.get(id=res_index).freethrowsn,2)
+	query_para4_n = round(10 * SmallForward.objects.get(id=res_index).assistsn,2)
+	query_para5_n = round(10 * SmallForward.objects.get(id=res_index).trbsn,2)
+	query_para6_n = round(10 * SmallForward.objects.get(id=res_index).stealsn,2)
 	context = {'user_para1': user_para1,
 	           'user_para2': user_para2,
 	           'user_para3': user_para3,
@@ -334,18 +340,18 @@ def resultsg(request):
 	#res = ShootingGuard.objects.get(index=1)
 	
 	res = ShootingGuard.objects.get(id=res_index).player
-	query_para1 = 100 * round(ShootingGuard.objects.get(id=res_index).twopercent,2)
-	query_para2 = 100 * round(ShootingGuard.objects.get(id=res_index).freethrows,2)
-	query_para3 = round(ShootingGuard.objects.get(id=res_index).trbs,2)
-	query_para4 = round(ShootingGuard.objects.get(id=res_index).assists,2)
-	query_para5 = round(ShootingGuard.objects.get(id=res_index).steals,2)
-	query_para6 = round(ShootingGuard.objects.get(id=res_index).blocks,2)
-	query_para1_n = round(10 * ShootingGuard.objects.get(id=res_index).twopercentn,0)
-	query_para2_n = round(10 * ShootingGuard.objects.get(id=res_index).freethrowsn,0)
-	query_para3_n = round(10 * ShootingGuard.objects.get(id=res_index).trbsn,0)
-	query_para4_n = round(10 * ShootingGuard.objects.get(id=res_index).assistsn,0)
-	query_para5_n = round(10 * ShootingGuard.objects.get(id=res_index).stealsn,0)
-	query_para6_n = round(10 * ShootingGuard.objects.get(id=res_index).blocksn,0)
+	query_para1 = round(100 * ShootingGuard.objects.get(id=res_index).threepercent,2)
+	query_para2 = round(100 * ShootingGuard.objects.get(id=res_index).twopercent,2)
+	query_para3 = round(100 * ShootingGuard.objects.get(id=res_index).freethrows,2)
+	query_para4 = round(ShootingGuard.objects.get(id=res_index).trbs,2)
+	query_para5 = round(ShootingGuard.objects.get(id=res_index).assists,2)
+	query_para6 = round(ShootingGuard.objects.get(id=res_index).steals,2)
+	query_para1_n = round(10 * ShootingGuard.objects.get(id=res_index).threepercent,0)
+	query_para2_n = round(10 * ShootingGuard.objects.get(id=res_index).twopercentn,0)
+	query_para3_n = round(10 * ShootingGuard.objects.get(id=res_index).freethrowsn,0)
+	query_para4_n = round(10 * ShootingGuard.objects.get(id=res_index).trbsn,0)
+	query_para5_n = round(10 * ShootingGuard.objects.get(id=res_index).assistsn,0)
+	query_para6_n = round(10 * ShootingGuard.objects.get(id=res_index).stealsn,0)
 	context = {'user_para1': user_para1,
 	           'user_para2': user_para2,
 	           'user_para3': user_para3,

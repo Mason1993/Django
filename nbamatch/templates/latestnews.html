@@ -1,9 +1,12 @@
 {%  extends "base.html" %}
 {%  block content %}
 
+<title>News Archive</title>
+ 
+<h1>News List</h1>
 {%  for post in object_list %}
-<p>{{ post.date | date:"Y-m-d" }} <a href = "/blog/{{post.id}}">{{ post.title }}</a></p>
-
-
+<p>{{ post.date | date:"Y-m-d" }} <a href = "/nbamatch/{{post.id}}">{{ post.title }}</a></p>
 {% endfor %}
+<br>
+<br>
 {% endblock %}
