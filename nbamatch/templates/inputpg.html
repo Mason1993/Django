@@ -2,11 +2,9 @@
 {% block content %}
 
 <title>Input Panel</title>
-<h1>Your Position is Point Guard. Please Input Your Self-Evaluation Skill Data Below</h1>
-
-<strong><p>Note: Skills should be within [0,10], (10 => Strongest; 0 => Weakeast).
-</p></strong>
-
+<div align="center">
+<h3>Your Position is</h3><h2>Point Guard</h2> 
+<p>Please Input Your Self-Evaluation Skill Data Below. Skills should be within [0,10] (10 => Strongest; 0 => Weakeast)</p>
 
 <form method="POST" action="result/">
 	{% csrf_token %}
@@ -41,5 +39,6 @@
 	<br>
 	<input type="submit" value="Submit">
 </form>
+</div>
 
 {% endblock %}

@@ -1,12 +1,13 @@
+How to visit the website?
 1. Please changd your directory to the directory where manage.py is.
 2. Open terminal and run $ python manage.py syncdb 
 2. $ python manage.py runserver
-3. The website will be deployed to localhost:8000/nbamatch/home
+3. The website will be deployed to localhost:8000/nbamatch
 
 note: you may be asked to create a superuser for admin page.
       If you cannot view any posted news in home page, you may need to create news posts on your own since the website is deployed locally.
 
-Environment:
+Implement Environment:
 Ubuntu: 14.04
 Django: 1.6
 Python: 2.7
